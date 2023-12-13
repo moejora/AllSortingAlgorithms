@@ -1,13 +1,12 @@
 package Quick;
 
-
 import java.util.Random;
 import java.util.Arrays;
 
 public class QuickTest {
-    
-    public QuickTest(int arraySize) {    
-        
+
+    public QuickTest(int arraySize) {
+
         Random num = new Random();
         QuickSort sorter = new QuickSort();
 
@@ -16,27 +15,24 @@ public class QuickTest {
             arr[i] = num.nextInt(100);
         }
         sorter.quickSorter(arr, 0, arr.length - 1);
-        
+
     }
 
     public static void main(String[] args) {
         new QuickTest(10).validate();
-        
+
         for (int size = 10000; size <= 200000; size += 10000) {
-            
+
             long start = System.currentTimeMillis();
-            new QuickTest(size);  
+            new QuickTest(size);
             long end = System.currentTimeMillis();
-            
+
             int n = (int) (end - start);
             System.out.println(n);
         }
     }
-    
-    
-    
-    
-   public void validate() {
+
+    public void validate() {
         Random ran = new Random();
         int[] num = new int[10];
         int i;
@@ -55,9 +51,9 @@ public class QuickTest {
         printArr(num);
     }
 
-  
     public void printArr(int[] num) {
-      System.out.println(Arrays.toString(num));
-}
+        System.out.println(Arrays.toString(num));
     }
+}
 
+//https://www.youtube.com/watch?v=h8eyY7dIiN4&t=1076s

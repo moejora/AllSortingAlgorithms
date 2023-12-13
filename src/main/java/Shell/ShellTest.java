@@ -1,6 +1,5 @@
 package Shell;
 
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -55,3 +54,6 @@ public class ShellTest {
         System.out.println(Arrays.toString(num));
     }
 }
+
+//https://www.youtube.com/watch?v=ddeLSDsYVp8&t=270s
+//https://www.youtube.com/watch?v=IViqgakt-Eg&t=547s
