@@ -1,36 +1,38 @@
+package Shell;
+
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class InsertionTest {
+public class ShellTest {
 
-    public InsertionTest(int arraySize) {
+    public ShellTest(int arraySize) {
 
         Random num = new Random();
-        InsetionSort sorta = new InsetionSort();
+        ShellSort sorta = new ShellSort();
 
         int array[] = new int[arraySize];
         for (int i = 0; i < arraySize; i++) {
             array[i] = num.nextInt(10);
         }
-        sorta.insertionSort(array);
+        sorta.shellSort(array);
 
     }
 
     public static void main(String[] args) {
-        new InsertionTest(10).validate();
+        new ShellTest(10).validate();
         for (int size = 10000; size <= 200000; size += 10000) {
             Long start = System.currentTimeMillis();
-            InsertionTest test = new InsertionTest(size);
+            ShellTest test = new ShellTest(size);
             Long end = System.currentTimeMillis();
 
             int n = (int) (end - start);
-             System.out.println(n);
-            //System.out.println(size + "Time in miliseconds " + n);
+            System.out.println(n);
+            // System.out.println(size + "Time in miliseconds " + n);
         }
     }
-    
-   public void validate() {
+
+    public void validate() {
         Random ran = new Random();
         int[] num = new int[10];
         int i;
@@ -41,16 +43,15 @@ public class InsertionTest {
         System.out.println("before");
         printArr(num);
 
-        InsetionSort sorter = new InsetionSort();
-        sorter.insertionSort(num);
+        ShellSort sorter = new ShellSort();
+        sorter.shellSort(num);
 
         System.out.println("after");
 
         printArr(num);
     }
 
-  
     public void printArr(int[] num) {
-      System.out.println(Arrays.toString(num));
-}
+        System.out.println(Arrays.toString(num));
     }
+}

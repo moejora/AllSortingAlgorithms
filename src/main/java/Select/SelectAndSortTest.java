@@ -1,31 +1,32 @@
+package Select;
+
 
 import java.util.Arrays;
 import java.util.Random;
+//Ïimport java.util.Arrays;
 
-public class MergeTest {
+public class SelectAndSortTest {
 
-    public MergeTest(int arraySize) {
-        Random num = new Random();
-        MergeSort mrg = new MergeSort();
+    public SelectAndSortTest(int arraySize) {
+        Random run = new Random();
+        SelectAndSort sas = new SelectAndSort();
 
         int arr[] = new int[arraySize];
         for (int i = 0; i < arraySize; i++) {
-            arr[i] = num.nextInt(100);
+            arr[i] = run.nextInt(10);
         }
-        mrg.mergeNums(arr);
+        sas.selectArray(arr);
     }
 
     public static void main(String[] args) {
-        new MergeTest(10).validate();
-
+        new SelectAndSortTest(10).validate();
         for (int size = 10000; size <= 200000; size += 10000) {
             Long start = System.currentTimeMillis();
-            MergeTest test = new MergeTest(size);
+            SelectAndSortTest test = new SelectAndSortTest(size);
             Long end = System.currentTimeMillis();
-            //    System.out.println(size);
-            int n = (int) +(end - start);
+            int n = (int) (end - start);
             System.out.println(n);
-            //   System.out.println("Time in miliseconds " + n);
+            //  System.out.println("Time in miliseconds " + n);
         }
     }
 
@@ -40,8 +41,8 @@ public class MergeTest {
         System.out.println("before");
         printArr(num);
 
-        MergeSort sorter = new MergeSort();
-        sorter.mergeNums(num);
+        SelectAndSort sorter = new SelectAndSort();
+        sorter.selectArray(num);
 
         System.out.println("after");
 

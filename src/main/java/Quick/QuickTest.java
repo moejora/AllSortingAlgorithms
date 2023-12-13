@@ -1,36 +1,41 @@
+package Quick;
 
-import java.util.Arrays;
+
 import java.util.Random;
+import java.util.Arrays;
 
-public class BubbleTest {
-
-    public BubbleTest(int arraySize) {
-
+public class QuickTest {
+    
+    public QuickTest(int arraySize) {    
+        
         Random num = new Random();
-        BubbleSort sorta = new BubbleSort();
+        QuickSort sorter = new QuickSort();
 
-        int array[] = new int[arraySize];
+        int arr[] = new int[arraySize];
         for (int i = 0; i < arraySize; i++) {
-            array[i] = num.nextInt(10);
+            arr[i] = num.nextInt(100);
         }
-        sorta.bubbleSort(array);
-
+        sorter.quickSorter(arr, 0, arr.length - 1);
+        
     }
 
     public static void main(String[] args) {
-        new BubbleTest(10).validate();
-
+        new QuickTest(10).validate();
+        
         for (int size = 10000; size <= 200000; size += 10000) {
-            Long start = System.currentTimeMillis();
-            BubbleTest test = new BubbleTest(size);
-            Long end = System.currentTimeMillis();
-
+            
+            long start = System.currentTimeMillis();
+            new QuickTest(size);  
+            long end = System.currentTimeMillis();
+            
             int n = (int) (end - start);
             System.out.println(n);
-            //System.out.println("Time in miliseconds " + n);
         }
     }
-     
+    
+    
+    
+    
    public void validate() {
         Random ran = new Random();
         int[] num = new int[10];
@@ -42,8 +47,8 @@ public class BubbleTest {
         System.out.println("before");
         printArr(num);
 
-        BubbleSort sorter = new BubbleSort();
-        sorter.bubbleSort(num);
+        QuickSort sorter = new QuickSort();
+        sorter.quickSorter(num, 0, num.length - 1);
 
         System.out.println("after");
 
@@ -54,4 +59,5 @@ public class BubbleTest {
     public void printArr(int[] num) {
       System.out.println(Arrays.toString(num));
 }
-}
+    }
+

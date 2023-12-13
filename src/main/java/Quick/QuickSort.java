@@ -1,3 +1,5 @@
+package Quick;
+
 
 import java.util.Arrays;
 
